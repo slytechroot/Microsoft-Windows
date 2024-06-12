@@ -1,0 +1,4 @@
+Mapping printers - vbs script 
+ ' Printers.vbs - Windows Logon Script.
+Set objNetwork = CreateObject("WScript.Network")
+objNetwork.AddWindowsPrinterConnection "\\FileServer01\HP4050"
