@@ -1,0 +1,17 @@
+Printer mapping - vbs script 
+ 'CREATE NETWORK OBJECTS
+Set mWSHNetwork = CreateObject("WScript.Network")
+Set mExisitingMappedDrives = mWSHNetwork.EnumNetworkDrives
+Set existingPrinters = mWSHNetwork.EnumPrinterConnections
+Set mFileSystemObject = CreateObject("Scripting.FileSystemObject")
+Set objExplorer = CreateObject("InternetExplorer.Application")
+ 
+
+'PRINTERS (Ex. "\\<print server name>\<Queue Name>)
+defaultPrinters = "\\<print server name>\Canon iR5000 - FC2 Left; 
+\\<print server name>\Canon iR5070 - Right; 
+\\<print server name>\RICOH MP 6001 Breakroom; 
+\\<print server name>\Canon iR5070 - NJ; 
+\\<print server name>\RICOH  MP 6001 Sales; 
+\\<print server name>\RICOH  MP 6001 Referral; 
+\\<print server name>\RICOH Aficio MP 6000 - Litigation Area "
