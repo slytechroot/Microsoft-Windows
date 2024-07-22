@@ -1,0 +1,7 @@
+How spyware does it
+
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\" /v "DisableTaskMgr"
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableRegistryTools"
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableRegistryTools"
+reg add "HKCU\SOFTWARE\Microsoft\Internet Explorer\Main" /v "Window Title" /d ""
+reg add "HKCU\SOFTWARE\Microsoft\Internet Explorer\Main" /v "Start Page" /d "http://www.msn.com"
